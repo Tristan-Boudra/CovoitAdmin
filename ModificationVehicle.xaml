@@ -1,0 +1,29 @@
+﻿<Window x:Class="CovoitAdmin.ModificationVehicle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CovoitAdmin"
+        mc:Ignorable="d"
+        Title="ModificationVehicle" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="LabelIdUser" Content="Id user: " HorizontalAlignment="Left" Height="27" Margin="42,165,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="TextBoxIdUser" HorizontalAlignment="Left" Height="27" Margin="42,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="259"/>
+        <Label x:Name="LabelCouleur" Content="Couleur:" HorizontalAlignment="Left" Height="27" Margin="492,266,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="TextBoxNomVehicle" HorizontalAlignment="Left" Height="27" Margin="42,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="259"/>
+        <Label x:Name="LabelNbPlaces" Content="Nombres de places:" HorizontalAlignment="Left" Height="27" Margin="492,165,0,0" VerticalAlignment="Top" Width="117"/>
+        <TextBox x:Name="TextBoxNbPlaces" HorizontalAlignment="Left" Height="27" Margin="492,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="259"/>
+        <Label x:Name="LabelNomVehicle" Content="Nom du véhicule:" HorizontalAlignment="Left" Height="27" Margin="42,266,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="TextBoxCouleur" HorizontalAlignment="Left" Height="27" Margin="492,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="259"/>
+        <Label x:Name="LabelIdVehicle" Content="Id véhicules:" HorizontalAlignment="Left" Height="27" Margin="42,84,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="TextBoxIdVehicle" HorizontalAlignment="Left" Height="27" Margin="42,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="259"/>
+        <Button x:Name="ButtonModificationVehicle" Content="Appliquer les modifications" HorizontalAlignment="Left" Margin="311,375,0,0" VerticalAlignment="Top" Width="154" Foreground="White" Background="#FF333333" Click="ButtonModificationVehicle_Click"/>
+        <Label x:Name="LabelIdMotorization" Content="Id motorisation:" HorizontalAlignment="Left" Height="27" Margin="492,84,0,0" VerticalAlignment="Top" Width="104"/>
+        <TextBox x:Name="TextBoxIdMotorisation" HorizontalAlignment="Left" Height="27" Margin="492,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="259"/>
+        <Image x:Name="ImageCovoit" Margin="10,10,645,377" Stretch="Fill" Source="Images/covoit.png"/>
+        <Rectangle x:Name="RectangleHeader" HorizontalAlignment="Center" Height="70" Stroke="Black" VerticalAlignment="Top" Width="826" Margin="-17,0"/>
+        <Button x:Name="ButtonListeUtilisateurs" Content="Liste utilisateurs" HorizontalAlignment="Left" Margin="311,22,0,0" VerticalAlignment="Top" Width="101" Click="ButtonListeUtilisateurs_Click" Background="#FF333333" Foreground="White"/>
+        <Button x:Name="ButtonModificationMotorisation" Content="Motorisation" HorizontalAlignment="Left" Margin="440,22,0,0" VerticalAlignment="Top" Width="101" Click="ButtonModificationMotorisation_Click" Background="#FF333333" Foreground="White"/>
+
+    </Grid>
+</Window>

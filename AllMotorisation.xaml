@@ -1,0 +1,36 @@
+﻿<Window x:Class="CovoitAdmin.AllMotorisation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CovoitAdmin"
+        mc:Ignorable="d"
+        Title="AllMotorisation" Height="450" Width="800">
+    <Grid>
+        <Button Content="Ajouter motorisation" HorizontalAlignment="Left" Margin="326,344,0,0" VerticalAlignment="Top" Width="142" Click="Button_Click" BorderBrush="#FF333333" Background="#FF333333" Foreground="White"/>
+        <DataGrid x:Name="DataGridAllMotorisation" HorizontalAlignment="Left" Height="169" Margin="100,108,0,0" VerticalAlignment="Top" Width="570" AutoGenerateColumns="False" IsReadOnly="True" RowBackground="#EDEDED" AlternatingRowBackground="white">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id motorisation" Binding="{Binding IdMotorization}"/>
+                <DataGridTextColumn Header="Libellet" Binding="{Binding Libellet}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="ButtonModificationMotorisation" Click="ButtonModificationMotorisation" Content="Modification" Background="#333333" Foreground="#FFFFFF"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="ButtonSuppresionMotorisation" Click="ButtonSuppresionMotorisation" Content="Supprimer" Background="#FFB50000" Foreground="#FFFFFF"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Image x:Name="ImageCovoit" Margin="10,10,645,377" Stretch="Fill" Source="Images/covoit.png"/>
+        <Rectangle x:Name="RectangleHeader" HorizontalAlignment="Center" Height="70" Stroke="Black" VerticalAlignment="Top" Width="826" Margin="-17,0"/>
+        <Button x:Name="ButtonListeUtilisateurs" Content="Liste utilisateurs" HorizontalAlignment="Left" Margin="311,22,0,0" VerticalAlignment="Top" Width="101" Click="ButtonListeUtilisateurs_Click" Background="#FF333333" Foreground="White"/>
+        <Button x:Name="ButtonModificationMotorisation2" Content="Motorisation" HorizontalAlignment="Left" Margin="440,22,0,0" VerticalAlignment="Top" Width="101" Click="ButtonModificationMotorisation_Click" Background="#FF333333" Foreground="White"/>
+    </Grid>
+</Window>

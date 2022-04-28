@@ -1,0 +1,73 @@
+﻿<Window x:Class="CovoitAdmin.InformationsPersonnelles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CovoitAdmin"
+        mc:Ignorable="d"
+        Title="InformationsPersonnelles" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="386*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="LabelInformatinsPersonnelles" Content="Informations personnelles" HorizontalAlignment="Left" Height="28" Margin="28,27,0,0" VerticalAlignment="Top" Width="154" Grid.Row="1"/>
+
+        <Label x:Name="LabelAllVehicules" Content="Véhicules" HorizontalAlignment="Left" Height="28" Margin="28,194,0,0" VerticalAlignment="Top" Width="154" Grid.Row="1"/>
+        <DataGrid x:Name="DataGridInformationsPersonnelles" HorizontalAlignment="Left" Margin="28,55,0,189" Width="737" AutoGenerateColumns="False" Grid.Row="1" RowBackground="#EDEDED" AlternatingRowBackground="white" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id utilisateur" Binding="{Binding IdUser}"/>
+                <DataGridTextColumn Header="Nom" Binding="{Binding FName}"/>
+                <DataGridTextColumn Header="Prénom" Binding="{Binding LName}" />
+                <DataGridTextColumn Header="Téléphone" Binding="{Binding Tel}" />
+                <DataGridTextColumn Header="Administrateur" Binding="{Binding Administrator}" />
+                <DataGridTextColumn Header="Date de création" Binding="{Binding DateCreate}"/>
+                <DataGridTextColumn Header="Date Modification" Binding="{Binding DateModification}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Tag="{Binding IdUser}" x:Name="ButtonModificationInformationPersonnelles" Click="ModificationInformationPersonnelles" Content="Modification" Background="#333333" Foreground="#FFFFFF"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="ButtonDeleteUser" Click="DeleteUser" Content="Supprimer" Background="#FFB50000" Foreground="#FFFFFF"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="DataGridVehicle" HorizontalAlignment="Left" Height="154" Margin="28,222,0,0" VerticalAlignment="Top" Width="737" AutoGenerateColumns="False" Grid.Row="1" RowBackground="#EDEDED" AlternatingRowBackground="white" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id Véhicule" Binding="{Binding IdVehicles}"/>
+                <DataGridTextColumn Header="Id Utilisateur" Binding="{Binding IdUser}"/>
+                <DataGridTextColumn Header="Id Motorisation" Binding="{Binding IdMotorization}"/>
+                <DataGridTextColumn Header="Nom du véhicule" Binding="{Binding VehicleName}"/>
+                <DataGridTextColumn Header="Couleur" Binding="{Binding Color}"/>
+                <DataGridTextColumn Header="Date de création" Binding="{Binding DateCreate}"/>
+                <DataGridTextColumn Header="Date Modification" Binding="{Binding DateModification}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="ButtonModificationVehicle" Click="ModificationVehicle" Content="Modifier" Background="#333333" Foreground="#FFFFFF"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="ButtonDeleteVehicle" Click="DeleteVehicle" Content="Supprimer" Background="#FFB50000" Foreground="#FFFFFF"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Image x:Name="ImageCovoit" Margin="10,10,645,377" Stretch="Fill" Source="Images/covoit.png" Grid.RowSpan="2"/>
+        <Rectangle x:Name="RectangleHeader" HorizontalAlignment="Center" Height="70" Stroke="Black" VerticalAlignment="Top" Width="826" Margin="-17,-10,-17,0" Grid.RowSpan="2"/>
+        <Button x:Name="ButtonListeUtilisateurs" Content="Liste utilisateurs" HorizontalAlignment="Left" Margin="311,22,0,0" VerticalAlignment="Top" Width="101" Click="ButtonListeUtilisateurs_Click" Background="#FF333333" Foreground="White" Grid.RowSpan="2"/>
+        <Button x:Name="ButtonModificationMotorisation" Content="Motorisation" HorizontalAlignment="Left" Margin="440,22,0,0" VerticalAlignment="Top" Width="101" Click="ButtonModificationMotorisation_Click" Background="#FF333333" Foreground="White" Grid.RowSpan="2"/>
+    </Grid>
+</Window>
