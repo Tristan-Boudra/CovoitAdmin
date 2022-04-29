@@ -45,7 +45,7 @@ namespace CovoitAdmin
                 byte[] hashBytes = sha256Hash.ComputeHash(sourceBytes);
                 string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
 
-                Users users = context.Users.Where(x => x.Password == hash && x.Tel == tel && x.Administrator == true).First();
+                Users users = context.Users.Where(x => x.Password == hash && x.Tel == tel).First();
                 if( users != null){
                     ListeComptesUtilisateurs utilisateur = new ListeComptesUtilisateurs();
                     utilisateur.Show();
